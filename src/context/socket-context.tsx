@@ -53,6 +53,7 @@ export const SocketContextProvider = ({ children }: PropsWithChildren) => {
         setLoading(false);
       };
 
+     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
      () => {
         ws.close();
       };
@@ -78,6 +79,7 @@ export const useSocket = () => {
   const { socket, user, setUser, connectionError, loading } =
     useContext(SocketContext);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sendMessage = (type: string, data: { [key: string]: any }) => {
     socket?.send(
       JSON.stringify({
